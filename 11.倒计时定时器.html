@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        // 倒计时定时器 ：定时执行代码
+        // 2个参数 ：第一个参数是 要定时执行的代码 第二个参数是需要延迟的时间（单位是毫秒 1s=1000ms）
+        // setTimeout(function(){
+        //     console.log("定时执行的代码");
+        // }, 2000);
+
+        // 需求 ：点击box的时候 把颜色改成 蓝色 过2秒之后再变回红色；
+        var boxEle = document.getElementsByClassName("box")[0];
+        boxEle.onclick = function(){
+            boxEle.style.background = "blue";
+            setTimeout(function(){
+                boxEle.style.background = "red";
+            }, 2000);
+        }
+
+    </script>
+</body>
+</html>

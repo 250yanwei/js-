@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  var date = new Date();
+        //  var str = "今天是" + date.getFullYear() + "年 " + (date.getMonth() + 1) + "月" + date.getDate() + "日" + date.getHours() + "时" + date.getMinutes() + "分" + date.getSeconds() + "秒;星期" + getDayStr(date.getDay());
+
+
+        // 一、模板字符串基本使用
+        // var name = "张三";
+        // // var str = "我的名字是\""+name+"\"我的年龄是22";
+        // // var str2 = '我的名字是"'+name+'"我的年龄是22';
+        // // 使用模板字符串 定义字符串 反引号 ``'' 数字键1 左边的按键
+        // // 解析变量 插值表达式 ${变量};
+        // var str = `我的名字是'${name}'我的年龄是22`;
+        // console.log(str);
+        // console.log(str2);
+
+        // 二、模板字符串可以接收三元运算符，其他的逻辑都不行 ；
+        // var name = "张三";
+        // var flag = false;  // 如果flag是true 那么就是男 如果是false 那么就是女；
+        // var str = `我的姓名是${name} 我的性别是${flag?'男':'女'}`;
+        // console.log(str);
+
+        function getDayStr(num) {
+            switch (num) {
+                case 1:
+                    return "一";
+                    break;
+                case 2:
+                    return "二";
+                    break;
+                case 3:
+                    return "三";
+                    break;
+                case 4:
+                    return "四";
+                    break;
+                case 5:
+                    return "五";
+                    break;
+                case 6:
+                    return "六";
+                    break;
+                case 0:
+                    return "日";
+                    break;
+                default:
+                    console.log("输入错误");
+                    break;
+
+            }
+
+        }
+        var date = new Date();
+        //  var str = "今天是" + date.getFullYear() + "年 " + (date.getMonth() + 1) + "月" + date.getDate() + "日" + date.getHours() + "时" + date.getMinutes() + "分" + date.getSeconds() + "秒;星期" + getDayStr(date.getDay());
+        var str = `今天是${date.getFullYear()}年${(date.getMonth() + 1)}月 ${date.getDate()}日${date.getHours()}时${date.getMinutes()}分${date.getSeconds()}秒;星期${getDayStr(date.getDay())}`;
+        document.write(str);
+    </script>
+</body>
+</html>

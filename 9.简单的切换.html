@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮一</button>
+    <button>按钮二</button>
+    <button>按钮三</button>
+    <div class="container">
+        页面一
+    </div>
+    <script>
+        // window.location.hash 1.可以获取哈希值 2.可以设置哈希值；
+        // 单页面应用 ： spa 哈希值 来实现 ；
+        var btns = document.getElementsByTagName("button");
+        var containerEle = document.getElementsByClassName("container")[0];
+        btns[0].onclick = function () {
+            window.location.hash = "a";
+            // containerEle.innerHTML = "hello";  //替换 containerEle标签里的内容；
+            renderDom()
+        }
+        btns[1].onclick = function () {
+            window.location.hash = "b";
+            renderDom()
+        }
+        btns[2].onclick = function () {
+            window.location.hash = "c";
+            renderDom()
+        }
+
+        // 通过不同的哈希值 来渲染不同的页面
+        // 替换页面的html内容 innerHTML
+        function renderDom() {
+            // 获取页面的哈希值；
+            var hashStr = window.location.hash;
+            switch (hashStr) {
+                case '#a':
+                    containerEle.innerHTML = "第一个页面";
+                    break;
+                case '#b':
+                    containerEle.innerHTML = "第二个页面";
+                    break;
+                case '#c':
+                    containerEle.innerHTML = "第三个页面";
+                    break;
+                default:
+                    console.log("哈希值错误");
+                    break;
+            }
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

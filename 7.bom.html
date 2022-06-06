@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">点击我打开页面</button>
+    <script>
+        // BOM: brower object model 浏览器对象模型；
+        // js里和浏览器相关的内容；
+        // 和浏览器相关的顶级对象，js里的预定义的全局变量；window
+        // console.log(window);
+        // 1.在js里定义的各种全局变量也会挂载在window对象上
+        // 2.window对象上的所有属性和方法在调用的时候 window都可以省略 
+        // var a = 10;
+        // // console.log(window);
+        // console.log(window.a);
+        // console.log(a);
+        // 一、窗口的宽度 innerWidth （包含滚动条的宽度）;
+        // console.log( window.innerWidth)  //浏览器窗口的宽度
+        // console.log(innerWidth);
+        // // 二、窗口的高度 innerHeight （包含滚动条的高度）;
+        // console.log(window.innerHeight);
+
+        // 三、和浏览器信息有关的内容
+
+        // console.log(window.navigator);
+        // appName: "Netscape" // 网景
+        // platform: "Win32"
+        // appVersion: "5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chro
+
+        // 四、打开和关闭浏览器页面window.open
+        // 1.获取元素 
+        document.getElementsByClassName("btn")[0].onclick = function(){
+            // console.log("123");
+            // window.open("http://baidu.com");
+            window.open("./a.html");
+        }
+        
+
+
+
+    </script>
+</body>
+</html>

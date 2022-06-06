@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 一.统计字符串中每个字符的个数？
+        //  var str = 'abcdacbabcbababcbabcabd'
+
+        // 结果
+
+        // { a: 出现次数， b: 出现次数, ...}
+
+        var str = 'abcdacbabcbababcbabcabd';
+
+        /* 
+         var str = "aabccd";
+         let obj = {
+             a:2,
+             b:1,
+             c:2,
+             d:1
+         }
+         */
+
+        //  1. 循环字符串 ： 把所有 不一样的字符放在一个对象里作为键名 ，键值全部设置成1
+        // {a:1,b:1,c:1,d:1} ---->对象的键名不能重复；
+        // var obj = {
+        //     a:1,
+        //     a:3,
+        //     c:2,
+        //     c:3
+        // }
+        // console.log(obj);
+        // var obj = {};
+        // for(let i=0;i<str.length;i++){
+        //     // console.log(str[i]);
+        //     // var key = str[i];
+        //     var key = str.i;
+        //     obj[key] = 1;
+        // }
+        // console.log(obj);
+
+        // 1.对象的键名问题 :键名不会重复 
+        // 2.对象键名 中括号和 点语法的区别 ：中括号可以解析变量 点语法会自动转成 字符串；
+        // var obj = {a:1,b:2,c:1,d:1};
+
+
+        // // console.log( obj['b']);  // 中括号里可以接收字符串或者是变量；
+        // // console.log(obj.b);  // 对象里点语法 后面自动会转换成字符串 ；
+
+
+        // // 只能用中括号 
+        // var mybstr = "b";
+        // console.log(obj[mybstr]);
+        // console.log(obj.mybstr);  //  等同于  obj['mybstr'];
+
+        // 2统计字符出现的次数；
+        //  var str = 'abcdacbabcbababcbabcabd';
+        var obj = {};
+        for (var i = 0; i < str.length; i++) {
+            var key = str[i];
+            //第一次遇到a  obj['a'] === 'undefined'; ----> obj['a'] = 1;
+            // 第二次遇到a   进入else  ---->obj['a'] = 1;---->obj['a']++ ---->obj['a']=2;
+            // .....
+            if (typeof obj[key] == "undefined") {
+                // 循环的时候第一次遇到这个键名；
+                obj[key] = 1;
+            } else {
+                obj[key]++;
+            }
+
+        }
+        console.log(obj);   // {a:1,b:1,c:1,d:1}
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn">点击我获取当前页面的地址</button>
+    <button class="btn">设置地址栏地址</button>
+    <button class="btn">点击我重新加载页面</button>
+    <button class="btn">点击我获取哈希值</button>
+    <button class="btn">点击我获取请求参</button>
+    <script>
+        // bom中浏览器地址栏相关内容 
+        // 在bom中所有和地址栏相关信息 在 window.location里面
+        // 一、获取地址栏相关信息 ，就是获取当前页面的地址；window.location.href;
+        // ["元素一"];
+        var btn = document.getElementsByClassName("btn");
+        btn[0].onclick = function () {
+            console.log(window.location.href)
+        }
+
+        // 二、设置地址栏地址；
+        btn[1].onclick = function(){
+            // 编程式跳转；
+            // window.location.href = "./a.html";
+            window.location.href = "http://www.baidu.com";
+        }
+
+        // 三、重载当前页面
+        btn[2].onclick = function(){
+            window.location.reload();
+        }
+
+        // 四、获取地址栏的哈希值 ： 是地址栏 # 后面的内容
+        btn[3].onclick = function(){
+            console.log(window.location.hash);
+        }
+
+
+        // 五、获取地址栏？后面的内容 （querystring：请求参数）；window.location.search
+        // https://login.taobao.com/member/login.jhtml?redirectURL=https%3a%2f%2fs.taobao.com:443/search%2F_____tmd_____%2Fpage%2Flogin_jump%3Frand%3DS3WxGHAgAt756EpznwfNzJq2AFA2qBNla3j6EINUS8We9dazM_iKElp8DwVSHZUevpC41Bx7RzivXIj9RnZgdg%26_lgt_%3De6c494105d9e8aeb55f5548978c16824___6909___a90e811afc0bd1c9291b39710ce9d79b___837b211a0c5c4d0311617da5fff37e25001413704de625b860e2518faad0f036883c3b564015799cf2f57fb42e75e95db4249c17f7f88b68923540f37993830ece6bbc08613ae5dfed2076df3b1ba6c9e8c0fa72be328c818d3833f7ce38e399d1d816dbe978220ab5aa776360914f1c%26x5referer%3Dhttp%253A%252F%252Fs.taobao.com%252Fsearch%253Fspm%253Da21bo.jianhua.201867-main.5.5af911d9wxRDPb%2526q%253D%2525E7%252594%2525B7%2525E9%25259E%25258B%2526imgfile%253D%2526commend%253Dall%2526ssid%253Ds5-e%2526search_type%253Ditem%2526sourceId%253Dtb.index%2526ie%253Dutf8%2526initiative_id%253Dtbindexz_20170306&uuid=e6c494105d9e8aeb55f5548978c16824
+        btn[4].onclick = function(){
+            console.log(window.location.search)
+        }
+
+    </script>
+</body>
+
+</html>

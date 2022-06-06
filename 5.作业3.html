@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu1{
+            width: 100px;
+            height: 200px;
+            background: red;
+            float: left;
+        }
+        .menu2{
+            width: 100px;
+            height: 200px;
+            background: blue;
+            float: left;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu1">
+
+    </div>
+    <div class="menu2">
+
+    </div>
+    <script>
+         // 四、 事件的作业
+         //二级菜单 ，移入移出事件，移入二级菜单显示，移出二级菜单消失
+        // 1.获取dom元素 （标签） 2.操作dom  3.事件的绑定；
+        // 1.获取dom：menu1 和menu2
+        // get ：获取  element ：元素 class 类  name 名字；
+        // var arr = ["张三","李四","王五"];
+        // console.log(arr);
+        var menu1Ele = document.getElementsByClassName("menu1")[0];  // 获取到的是类数组 或者 伪数组
+        var menu2Ele = document.getElementsByClassName("menu2")[0];
+        // console.log(menu1Ele);
+        // 当鼠标移入到menu1的时候会执行后面的函数；
+        menu1Ele.onmouseover = function(){
+            console.log("鼠标移入了menu1元素里面");
+            // 让menu2显示 
+            menu2Ele.style.display = "block";
+        }
+
+
+        var fn = function(){
+            console.log("鼠标移除了menu1元素");
+            menu2Ele.style.display = "none";
+        }
+
+
+        // 当鼠标移除menu1的时候执行函数 
+        menu1Ele.onmouseout = fn;
+
+        // 1.命名函数   2.匿名函数（没有名称的函数）
+        // function fn(){  //命名函数 ，声明式 
+        //     console.log("fn");
+        // }
+
+        // var fn2 = function(){  //匿名函数 ，赋值式 
+        //     console.log("fn2")
+        // }
+
+
+
+    </script>
+</body>
+</html>

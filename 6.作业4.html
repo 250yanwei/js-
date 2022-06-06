@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 五、找一个字符串重复最多的内容，显示重复多少次
+
+        // 1.找到每个字符出现的次数；
+        function getStrObj(str) {
+            var obj = {};
+            for (var i = 0; i < str.length; i++) {
+                var key = str[i];
+                if (typeof obj[key] == "undefined") {
+                    obj[key] = 1;
+                } else {
+                    obj[key]++;
+                }
+            }
+            return obj;
+        }
+        var str = "aaaabbbbccccdde";
+        var res = getStrObj(str);
+
+        console.log(res);
+        // var arr = ["张三","李四"];
+        // console.log(arr);
+        // 2.找到出现最多的字符显示次数和字符名字；
+        // var objData = {num:4,name:"a"};    //用来存放结果的对象
+
+        // for(var key in res){ // 在每个字符出现的次数里查找次数出现最多的元素替换objData 里的内容；
+        //     if(res[key]>objData['num']){
+        //         objData['num'] = res[key];
+        //         objData['name'] = key;
+        //     }
+        // }
+        // console.log(objData);
+
+
+
+
+        // 对象数组；[{name:"a",num:4},{name:"b",num:4}];
+        var objData = [{ num: 0, name: "a" }];    //用来存放结果的对象
+        // objData.length-1  ： 始终可以获取数组的最后一项；
+        for (var key in res) { // 在每个字符出现的次数里查找次数出现最多的元素替换objData 里的内容；
+            if (res[key] > objData[objData.length - 1]['num']) {
+                objData[objData.length - 1]['num'] = res[key];
+                objData[objData.length - 1]['name'] = key;
+            } else {
+                if (res[key] == objData[objData.length - 1]['num']) {
+                    var newobj = {  // 新生成一个对象 把和之前结果相同的元素重新存储起来；
+                        num: res[key],
+                        name: key
+                    }
+                    objData.push(newobj);
+                }
+            }
+        }
+        console.log(objData);
+    </script>
+</body>
+
+</html>
